@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:rgb(145 255 0 /65%);
+}
+div.container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px ;
+  height:600px;
+
+  color: black;
+}
+
+.square {
+  height: 100px;
+  width: 100px;;
+  border: solid 1px black;
+  background-color: #d0c9c9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+.active {
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
