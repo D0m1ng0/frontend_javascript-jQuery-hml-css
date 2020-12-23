@@ -1,0 +1,575 @@
+/* general style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.class-font {
+  font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+}
+
+
+header{
+  height: 59px;
+  width: 100%;
+  background-color: #ededed;
+}
+
+input, button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+svg {
+  color: rgba(0,0,0,0.45);
+}
+/* /general style */
+
+/*div wrapper style */
+#wrapper {
+  background-color: #d7dbd6;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+#wrapper-up {
+  background-color: #009688;
+  content: "";
+  width: 100%;
+  height: 126px;
+  top: 0;
+  z-index: -1;
+}
+
+/* wrapper core app style */
+#wrapper-core {
+  width: auto;
+  height: 100vh;
+  position: relative;
+  top: -126px;
+  z-index: 1;
+  margin-right: 70px;
+  margin-left: 70px;
+  margin-top: 18px;
+  filter: drop-shadow(0 0 2px grey);
+}
+#wrapper-core::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  /* side-left style */
+  #side-left {
+    float: left;
+    height: 95vh;
+    width: 30%;
+    background-color: #ffffff;
+    border-rigth: solid 1px #d2dada;
+  }
+
+    /* header-left side style */
+    .header-left-side, .header-nav-left-side, .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-left-side {
+      border-right: solid 1px #e3e3e3;
+      padding: 10px 15px;
+    }
+    .nav-flex li {
+      list-style-type: none;
+    }
+    .nav-flex a {
+      text-decoration: none;
+    }
+
+    .user-image img{
+      height: 40px;
+      width: auto;
+      border-radius: 50%;
+      padding: 2px;
+      cursor: pointer;
+    }
+
+    .read-circle svg  {
+      margin-right: 10px;
+    }
+
+    .msg svg {
+    }
+    .header-nav-left-side .nav-flex li a {
+      /* padding: 8px; */
+      margin-left: 20px;
+      margin-rigt: 20px;
+
+    }
+    /* /header-left side style */
+
+    /* left side notification */
+    .notification-activation {
+      background-color: #9de1fe;
+      height: 89px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .notification-activation svg {
+      width: auto;
+      height: 50px;
+      margin-right: 15px;
+      margin-left: 12px;
+      color: #f5fcff;
+      border-radius: 100%;
+    }
+    .notification-activation p {
+      font-size: 16px;
+      color: rgba(48,48,48, 0.96)
+
+    }
+    .notification-activation a {
+      font-size: 14px;
+      color: rgba(48,48,48, 0.85);
+      text-decoration: none;
+    }
+    /* /left side notification */
+
+    /* search bar */
+    .contacts-search-bar-box {
+      height: 49px;
+      background-color: #f6f6f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contacts-search-bar {
+      width: 90%;
+      border-radius: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+    }
+    .contacts-search-bar-input {
+      display: flex;
+      align-items: center;
+      height: 35px;
+      width: 100%;
+      margin: 0px 50px;
+      border: none;
+      outline: none;
+      color: #4A4A4A;
+    }
+    .contacts-search-bar button  {
+      display: none;
+    }
+    .contacts-search-bar button.active {
+      display: block;
+    }
+
+    /* .contacts-search-bar-btn {
+    }
+    .contacts-search-bar-btn:hover {
+      display: none;
+    } */
+    .contacts-search-bar-btn-arrow {
+      position: relative;
+      color: #33b7f6;
+      font-size: 15px;
+      /* display: none; */
+      transition: transform 1s;
+      font-size: 20px;
+      font-style: italic;
+      transform: rotate(-90deg);
+    }
+    .contacts-search-bar-btn-arrow:hover {
+      transform: rotate(0deg);
+    }
+
+
+    /* /search bar */
+
+    /* contacts box */
+    .contacts-box {
+      overflow: auto;
+      /* height: calc(100vh - 235px); */
+      height: calc(95vh - 197px);
+    }
+    .user-contact-box:hover {
+      cursor: pointer;
+      background-color: #f5f5f5;
+    }
+    .user-contact-box {
+      display: flex;
+      align-items: center;
+      /* background-color: #ffffff; */
+      /* background-color: #3ff44a; */
+
+      height: 72px;
+      border-top: solid 1px #e3e3e3;
+      position: relative;
+    }
+    .contacts-box .user-contact-box.active {
+      background: #ebebeb;
+    }
+    .user-contact-box img {
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      margin-right: 15px;
+      margin-left: 14px;
+      /* border: solid 2px black; */
+    }
+    .user-contact-box-right {
+      width: 80%;
+    }
+
+      /*DROPDOWN */
+      .user-contact-up, .user-contact-down {
+        /* background-color: orange; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .user-contact-box  .user-name {
+        /* background-color: yellow; */
+        font-size: 17px;
+        margin-top: 0 20px;
+        color: black;
+        width: 80%;
+        /* border: solid 2px black; */
+      }
+      .user-contact-box .summary-msg {
+        position: relative;
+        color: rgba(0,0,0,0.6);
+        /* background-color: blue; */
+        font-size: 14px;
+        max-width: 80%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+
+        /* border: solid 2px black; */
+      }
+      .summary-msg svg {
+        color: #69ccee;
+      }
+      .contact-time {
+        font-size: 12px;
+        /* background-color: red; */
+        /* border: solid 2px black; */
+        width: auto;
+        color: rgba(0,0,0,0.45);
+        /* position: relative; */
+      }
+      .i-contact-menu {
+        /* background-color: red; */
+        color: #aeaeae;
+        position: relative;
+        right:5px;
+        /* border: solid 2px black; */
+        /* display: none; */
+      }
+        /* dropdown contatti e messaggi */
+        .parent-dropdown, .parent-dropdown-msg {
+          position: relative;
+        }
+        .dropdown {
+          background-color: #ffffff;
+          position: absolute;
+          left: -221px;
+          top:10px;/*togliere*/
+          filter: drop-shadow(0 1px 5px #ccc);
+          display: none;
+          border-radius: 3px;
+          z-index: 999;
+          width: 232px;
+          font-size: 14.5px;
+          z-index: 1;/*togliere*/
+        }
+        .dropdown-msg {
+          background-color: #ffffff;
+          position: absolute;
+          left: -123px;
+          top:10px;/*togliere*/
+          filter: drop-shadow(0 1px 5px #ccc);
+          display: none;
+          border-radius: 3px;
+          z-index: 999;
+          width: 232px;
+          font-size: 14.5px;
+          z-index: 1;/*togliere*/
+        }
+
+
+        .dropdown ul li a, .dropdown-msg ul li a {
+          text-decoration: none;
+          color: #4A4A4A;
+        }
+        .dropdown li, .dropdown-msg li {
+          list-style-type: none;
+          height: 38px;
+          padding: 22px 30px 31px 30px;
+        }
+
+        }
+        .dropdown li:hover, .dropdown-msg li:hover {
+          background-color: red;
+          background-color: #f5f5f5;
+          /* display: none; */
+        }
+        .grey {
+          background-color: red;
+          /* background-color: #f5f5f5; */
+        }
+
+        /* /dropdown contatti */
+
+      /* /DA AGGIUSTARE METTENDO ORA E DROPDOWN */
+
+    /* /contacts box */
+
+  /* /side-left style */
+
+  /* main style */
+  main {
+    float: left;
+    height: 95vh;
+    width: 70%;
+    background-image: url("../img/background.jpg");
+    background-repeat: repeat;
+  }
+    /* main header */
+    .main-header, .main-nav, .main-nav-flex {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+    }
+    .main-header {
+      border-left: solid 1px #d2dada;
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+    .chat-box-header {
+      display: flex;
+      align-items: center;
+      /* justify-content: space-between; */
+      width: 70%;
+    }
+    .chat-box-header img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    .chat-box-name-time .name-user {
+      font-size: 16px;
+    }
+    .chat-box-name-time .time-user {
+      font-size: 13px;
+      width: 175px;
+      color: rgba(0,0,0,0.6);
+    }
+
+    .chat-box-header {
+      display: none;
+    }
+    .chat-box-header.active {
+      display: flex;
+    }
+
+
+    .main-nav-flex li {
+      list-style-type: none;
+    }
+    .main-nav-flex a {
+      text-decoration: none;
+    }
+    .main-nav .main-nav-flex svg {
+      /* width: 40px;
+      height: 40px;
+      padding: 4px; */
+      margin-right: 18px;
+    }
+    /* /main header */
+
+    /* main msg-box */
+    .msg-box {
+      overflow: auto;
+      height: calc(95vh - 59px);
+      padding-bottom: 94px;
+      position: relative;
+      display: none;
+    }
+    .msg-box.active {
+      display: block;
+    }
+
+
+    .msg-user-flex {
+      width: 100%;
+      display: flex;
+      /* flex-direction: column; */
+      /* position: relative; */
+    }
+    .msg-user .contact-time {
+      width: auto;
+      text-align: right;
+    }
+    .left {
+      justify-content: flex-start;
+      padding: 9px 86px;
+    }
+    .right {
+      justify-content: flex-end;
+      padding: 9px 86px;
+    }
+
+    .msg-user {
+      position: relative;
+      height: auto;
+      max-width:65%;
+      background-color: #ffffff;
+      padding: 6px 7px 8px 9px;
+      border-radius: 8px;
+      font-size: 14.2px;
+      filter: drop-shadow(0.3px 0.3px 0.3px rgb(92, 106, 93));
+    }
+    .msg-user-layover {
+      position: relative;
+      top: 8px;
+      right: 29px;
+      height: 1%;
+      width: 1%;
+      /* background-color: #dcf8c6; */
+      font-size: 14.2px;
+      /* display: none; */
+    }
+    .i-msg-menu {
+      /* display: none; */
+      /* background-color: red; */
+      /* position: absolute;
+      right:0px; */
+      /* border: solid 2px black; */
+      color: #a7bc96;
+    }
+    .left-color {
+    }
+    .right-color {
+      background-color: #dcf8c6;
+    }
+    .msg-before {
+      padding-bottom: 10px;
+    }
+    .msg-next {
+      padding-top: 0;
+      height: auto;
+      width: 400px;
+    }
+    .img-sent-user {
+      max-width: 330px;
+      max-height: 623px;
+      padding: 5px;
+    }
+    .msg-user img {
+      max-width: 100%;
+      max-height: auto;
+    }
+    /* /main msg-box */
+
+    /* main input-box */
+    .main-input-box {
+      position: relative;
+      bottom: 62px;
+      background-color: #f0f0f0;
+      border-left: solid 1px #d2dada;
+      width: auto;
+      height: 62px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index:2;/*togliere*/
+    }
+    .emoticon-btn {
+      margin-left: 2%;
+      height: 26px;
+      width: 26px;
+      cursor: pointer;
+    }
+    .voice-input-btn{
+      margin-right: 2%;
+      cursor: pointer;
+    }
+
+    .main-search-bar-input {
+      /* margin: 0 5px; */
+      width: 90%;
+      height: 72%;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      padding-left: 15px;
+      margin: 0 2%;
+      background-color: #ffffff;
+      color: #4A4A4A;
+    }
+
+    /* /main input-box */
+
+  /* /main style */
+
+  /* side-right style */
+  #side-right {
+    float: left;
+    height: 95vh;
+    width: 30%;
+    background-color: green;
+    border: solid 1px black;
+  }
+
+  /* /side-right style */
+
+.hidden {
+  display: none;
+}
+
+/* scrollbars custom */
+.contacts-box::-webkit-scrollbar {
+  width: 6px;
+}
+.contacts-box::-webkit-scrollbar-track {
+  /* background: #ffffff; */
+}
+.contacts-box::-webkit-scrollbar-thumb {
+  background: #cccccc;
+}
+.contacts-box::-webkit-scrollbar-thumb:hover {
+  background: #b9b4b4;
+}
+
+.msg-box::-webkit-scrollbar {
+  width: 6px;
+}
+.msg-box::-webkit-scrollbar-track {
+  /* background: #ffffff; */
+}
+.msg-box::-webkit-scrollbar-thumb {
+  background: #bbb5b5;
+}
+.msg-box::-webkit-scrollbar-thumb:hover {
+  background: #a7a4a4;
+}
+
+
+/* per schermi risoluzione oltre 1536px*/
+@media screen and (min-width: 1920px) {
+  #wrapper-core {
+    width: auto;
+    margin-left: 13.6vw;
+    margin-right: 13.6vw;
+  }
+}

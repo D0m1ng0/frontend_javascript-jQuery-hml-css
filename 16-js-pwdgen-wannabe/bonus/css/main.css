@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: orange;
+}
+ #psw-flex-box {
+   display: flex;
+   height: 200px;
+   justify-content: center;
+   align-items: center;
+ }
+
+h1 {
+  color: black;
+  font-size: 3em;
+}

@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Boolzap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+    <!-- BOOTSTRAP EVENTUALLY -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <!-- BOOTSTRAP EVENTUALLY -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <!-- creazione di messaggi col metodo template Handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+
+    <script id="template-left-message" type="text/javascript">
+      <div class="msg-user-flex left">
+        <div class="msg-user">
+          // DEBUG : cloning in a template style
+          <!-- <p>ogni inizio ha una fine </p>
+          <p>una rondine non fa miaoo </p>
+          <p>la gente è il più grande spettacolo del mondo e non si paga il biglietto per guardarlo </p>
+          <p>non prendere la vita sul serio, tanto non se ne esce vivi </p>
+          <p>la legge di murphy sice che se qualcosa può accadere accadrà</p>
+          <p>la fortuna è bendata ma la sfortuna ci vede benissimo</p> -->
+          <div id= "contact-time" class="contact-time">
+            time-test
+          </div>
+        </div>
+
+        <div class="msg-user-layover parent-dropdown-msg">
+          <i class="fas fa-chevron-down i-msg-menu"></i>
+          <div class="dropdown-msg">
+            <ul>
+              <li><a href="#">Info messaggio</a></li>
+              <li><a href="#">Rispondi</a></li>
+              <li><a href="#">Scarica</a></li>
+              <li><a href="#">Inoltra messaggio</a></li>
+              <li><a href="#">Messaggio importante</a></li>
+              <li><a href="#">Elimina messaggio</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </script>
+
+    <script type="text/javascript" src="js/script.js">
+    </script>
+    <link rel="stylesheet" href="css/main.css">
+
+
+  </head>
+
+  <body>
+
+    <!-- div wrapper -->
+    <div id="wrapper" class="class-font">
+
+      <div id="wrapper-up">
+      </div>
+
+      <div id="wrapper-core">
+
+        <!-- left side -->
+        <div id="side-left" class="class-font" >
+          <header class="header-left-side">
+
+            <div class="user-image">
+              <img src="img/user-image.png" alt="">
+            </div>
+
+            <nav class="header-nav-left-side">
+              <ul class="nav-flex">
+                <li>
+                  <a class="read-circle" href="#">
+                    <svg id="df9d3429-f0ef-48b5-b5eb-f9d27b2deba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="currentColor" d="M12.072 1.761a10.05 10.05 0 0 0-9.303 5.65.977.977 0 0 0 1.756.855 8.098 8.098 0 0 1 7.496-4.553.977.977 0 1 0 .051-1.952zM1.926 13.64a10.052 10.052 0 0 0 7.461 7.925.977.977 0 0 0 .471-1.895 8.097 8.097 0 0 1-6.012-6.386.977.977 0 0 0-1.92.356zm13.729 7.454a10.053 10.053 0 0 0 6.201-8.946.976.976 0 1 0-1.951-.081v.014a8.097 8.097 0 0 1-4.997 7.209.977.977 0 0 0 .727 1.813l.02-.009z">
+                      </path>
+                      <path fill="#009588" d="M19 1.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z">
+                      </path>
+                    </svg>
+                    <!-- <img src="img/read-circle.png" alt=""> -->
+                  </a>
+                </li>
+                <li>
+                  <a class="msg" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="currentColor" d="M19.005 3.175H4.674C3.642 3.175 3 3.789 3 4.821V21.02l3.544-3.514h12.461c1.033 0 2.064-1.06 2.064-2.093V4.821c-.001-1.032-1.032-1.646-2.064-1.646zm-4.989 9.869H7.041V11.1h6.975v1.944zm3-4H7.041V7.1h9.975v1.944z">
+                      </path>
+                    </svg>
+                    <!-- <img src="img/msg.png" alt=""> -->
+                  </a>
+                </li>
+                <li class="parent-dropdown">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="currentColor" d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z">
+                      </path>
+                    </svg>
+                    <!-- <i class="fas fa-ellipsis-v"></i> -->
+                  </a>
+                  <div class="dropdown">
+                    <ul>
+                      <li><a href="#">Nuovo gruppo</a></li>
+                      <li><a href="#">Crea una stanza</a></li>
+                      <li><a href="#">Profilo</a></li>
+                      <li><a href="#">Archiviate</a></li>
+                      <li><a href="#">Importanti</a></li>
+                      <li><a href="#">Impostazioni</a></li>
+                      <li><a href="#">Disconnetti</a></li>
+                    </ul>
+                  </div>
+
+                </li>
+              </ul>
+            </nav>
+
+          </header>
+
+          <div class="notification-activation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+              <path fill="currentColor" d="M24.154 2C11.919 2 2 11.924 2 24.165S11.919 46.33 24.154 46.33s22.154-9.924 22.154-22.165S36.389 2 24.154 2zm-.744 15.428v-.618c0-.706.618-1.324 1.324-1.324s1.323.618 1.323 1.324v.618c2.559.618 4.412 2.823 4.412 5.559v3.176l-8.294-8.294a5.056 5.056 0 0 1 1.235-.441zm1.323 15.706a1.77 1.77 0 0 1-1.765-1.765h3.529a1.768 1.768 0 0 1-1.764 1.765zm7.236-.883l-1.765-1.765H17.233v-.882l1.765-1.765v-4.853a5.56 5.56 0 0 1 .794-2.912l-2.559-2.559 1.147-1.147 14.735 14.736-1.146 1.147z"></path>
+            </svg>
+            <span>
+              <p>Ricevi notifiche di nuovi messaggi</p>
+              <a href="#">Attiva notifiche desktop</a>
+            </span>
+          </div>
+
+          <div class="contacts-search-bar-box">
+            <div class="contacts-search-bar">
+              <button class="active" type="" name="button" data-id="0">
+                <svg class="contacts-search-bar-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor" d="M15.009 13.805h-.636l-.22-.219a5.184 5.184 0 0 0 1.256-3.386 5.207 5.207 0 1 0-5.207 5.208 5.183 5.183 0 0 0 3.385-1.255l.221.22v.635l4.004 3.999 1.194-1.195-3.997-4.007zm-4.808 0a3.605 3.605 0 1 1 0-7.21 3.605 3.605 0 0 1 0 7.21z">
+                  </path>
+                </svg>
+              </button>
+              <button type="" name="button" data-id="1">
+                <svg class="contacts-search-bar-btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor" d="M12 4l1.4 1.4L7.8 11H20v2H7.8l5.6 5.6L12 20l-8-8 8-8z">
+                  </path>
+                </svg>
+              </button>
+
+              <input id="contacts-search-bar-input" class="contacts-search-bar-input" type="text" name="" value="" placeholder="Crea o inizia una nuova chat">
+
+            </div>
+          </div>
+
+          <div id="contacts-box" class="contacts-box">
+
+            <div class="user-contact-box" data-id="0">
+              <img class="parent-dropdown" src="img/russell-casse.jpg" alt="">
+                <!-- DA FARE IN UN SECONDO MOMENTO -->
+                <!-- <div class="dropdown">
+                  <img src="img/russell-casse.jpg" alt="">
+                </div> -->
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Russell Casse
+                    🍻🍻🍻😎
+                  </div>
+                  <div class="contact-time">03:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+
+                    ore 19:00 alla fattoria da me, festa della pannocchiaaa !...
+                    ci facciamo 2 risate... ricordi?quando gli ho detto va bene - va beene ! brutti alieni del caxxo ! usando il linguaggiìo della mia generazione : andate a pigliarvelo nel kuuloooo! ahahaha
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="user-contact-box active" data-id="1">
+              <img src="img/kubrick.png" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Stanley Kubrick
+                  </div>
+                  <div class="contact-time">16:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    a proposito Coop, com'è il tempo su Titano ?
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="user-contact-box" data-id="2">
+              <img src="img/nolan.png" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Christopher Nolan
+                  </div>
+                  <div class="contact-time">09:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    Sto girando una scena, ti chiamo dopo. ah Kubrick ed io abbiamo una "sorpresa" per te...
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="user-contact-box" data-id="3">
+              <img src="img/hal-9000.jpg" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Hal-9000
+                  </div>
+                  <div class="contact-time">11:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    ...
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="user-contact-box" data-id="4">
+              <img src="img/dr-okun.jpg" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Dr. Okun &#129299;
+                  </div>
+                  <div class="contact-time">12:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    comunico con loro telepaticamente !&#128561;
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="user-contact-box" data-id="5">
+              <img src="img/romilly-gyasi.jpg" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Romilly-Gyasi
+                  </div>
+                  <div class="contact-time">13:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    tipo un whormhole ahaha...
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="user-contact-box" data-id="6">
+              <img src="img/tars.jpg" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Tars Robot
+                  </div>
+                  <div class="contact-time">16:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    ricorda la terza legge di Newoton, bisogna sempre lasciarsi qualcosa alle spalle per andare avanti
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="user-contact-box" data-id="7">
+              <img src="img/murphy-cooper.png" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Murphy Cooper
+                  </div>
+                  <div class="contact-time">18:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    EUREKA papa'!
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="user-contact-box" data-id="8">
+              <img src="img/marty-mcfly.jpg" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Marty Mcfly
+                  </div>
+                  <div class="contact-time">16:35</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    ho incontrato Doc al bar e mi faceva ragionamenti in quinta dimensiona... forse dopo 5 pinte
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="user-contact-box" data-id="9">
+              <img src="img/baumgartner.jpg" alt="">
+              <div class="user-contact-box-right">
+                <div class="user-contact-up">
+                  <div class="user-name">
+                    Felix Baumgartner
+                  </div>
+                  <div class="contact-time">18:59</div>
+                </div>
+
+                <div class="user-contact-down">
+                  <div class="summary-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                    Coop alla RedBull mi hanno chiesto quando ti scade il contratto con la Nasa, vorrebbero farti una proposta
+                  </div>
+                  <div class="parent-dropdown">
+                    <i class="fas fa-chevron-down i-contact-menu"></i>
+                    <div class="user-contact-down-options dropdown ">
+                      <ul>
+                        <li><a href="#">Archivia chat</a></li>
+                        <li><a href="#">Disattiva notifiche</a></li>
+                        <li><a href="#">Elimina chat</a></li>
+                        <li><a href="#">Fissa chat</a></li>
+                        <li><a href="#">Segna come da leggere</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- left side -->
+
+        <!-- main -->
+        <main>
+          <header class="main-header">
+
+            <div class="chat-box-header " data-id="0">
+              <img src="img/russell-casse.jpg" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Russell Casse
+                🍻🍻🍻😎</div>
+                <div class="time-user">ultimo accesso oggi alle 03:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header active" data-id="1">
+              <img src="img/kubrick.png" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Stanley Kubrick</div>
+                <div class="time-user">ultimo accesso oggi alle 16:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header " data-id="2">
+              <img src="img/nolan.png" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Christopher Nolan</div>
+                <div class="time-user">ultimo accesso oggi alle 09:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header " data-id="3">
+              <img src="img/hal-9000.jpg" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Hal-9000</div>
+                <div class="time-user">ultimo accesso oggi alle 11:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header " data-id="4">
+              <img src="img/dr-okun.jpg" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Dr. Okun &#129299;</div>
+                <div class="time-user">ultimo accesso oggi alle 12:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header " data-id="5">
+              <img src="img/romilly-gyasi.jpg" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Romilly-Gyasi</div>
+                <div class="time-user">ultimo accesso oggi alle 13:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header " data-id="6">
+              <img src="img/tars.jpg" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Tars Robot</div>
+                <div class="time-user">ultimo accesso oggi alle 16:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header " data-id="7">
+              <img src="img/murphy-cooper.png" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Murphy Cooper</div>
+                <div class="time-user">ultimo accesso oggi alle 18:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header " data-id="8">
+              <img src="img/marty-mcfly.jpg" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Marty Mcfly</div>
+                <div class="time-user">ultimo accesso oggi alle 16:35</div>
+              </div>
+            </div>
+
+            <div class="chat-box-header " data-id="9">
+              <img src="img/baumgartner.jpg" alt="">
+              <div class="chat-box-name-time">
+                <div class="name-user">Felix Baumgartner</div>
+                <div class="time-user">ultimo accesso oggi alle 18:59</div>
+              </div>
+            </div>
+
+            <nav class="main-nav">
+              <ul class="main-nav-flex">
+                <li>
+                  <a class="search"href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="currentColor" d="M15.9 14.3H15l-.3-.3c1-1.1 1.6-2.7 1.6-4.3 0-3.7-3-6.7-6.7-6.7S3 6 3 9.7s3 6.7 6.7 6.7c1.6 0 3.2-.6 4.3-1.6l.3.3v.8l5.1 5.1 1.5-1.5-5-5.2zm-6.2 0c-2.6 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2 4.6-4.6 4.6z">
+                      </path>
+                    </svg>
+                    <!-- <img src="img/search.png" alt=""> -->
+                  </a>
+                </li>
+                <li>
+                  <a class="grapp.png" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="currentColor" d="M1.816 15.556v.002c0 1.502.584 2.912 1.646 3.972s2.472 1.647 3.974 1.647a5.58 5.58 0 0 0 3.972-1.645l9.547-9.548c.769-.768 1.147-1.767 1.058-2.817-.079-.968-.548-1.927-1.319-2.698-1.594-1.592-4.068-1.711-5.517-.262l-7.916 7.915c-.881.881-.792 2.25.214 3.261.959.958 2.423 1.053 3.263.215l5.511-5.512c.28-.28.267-.722.053-.936l-.244-.244c-.191-.191-.567-.349-.957.04l-5.506 5.506c-.18.18-.635.127-.976-.214-.098-.097-.576-.613-.213-.973l7.915-7.917c.818-.817 2.267-.699 3.23.262.5.501.802 1.1.849 1.685.051.573-.156 1.111-.589 1.543l-9.547 9.549a3.97 3.97 0 0 1-2.829 1.171 3.975 3.975 0 0 1-2.83-1.173 3.973 3.973 0 0 1-1.172-2.828c0-1.071.415-2.076 1.172-2.83l7.209-7.211c.157-.157.264-.579.028-.814L11.5 4.36a.572.572 0 0 0-.834.018l-7.205 7.207a5.577 5.577 0 0 0-1.645 3.971z">
+                      </path>
+                    </svg>
+                    <!-- <img src="img/grapp.png" alt=""> -->
+                  </a>
+                </li>
+                <li class="parent-dropdown">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="currentColor" d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z">
+                      </path>
+                    </svg>
+                    <!-- <i class="fas fa-ellipsis-v"></i> -->
+                  </a>
+                  <div class="dropdown">
+                    <ul>
+                      <li><a href="#">Info contatto</a></li>
+                      <li><a href="#">Seleziona messaggi</a></li>
+                      <li><a href="#">Disattiva notifiche</a></li>
+                      <li><a href="#">Elimina messaggi</a></li>
+                      <li><a href="#">Elimina chat</a></li>
+                    </ul>
+                  </div>
+
+                </li>
+              </ul>
+            </nav>
+
+          </header>
+
+          <!-- contact 1 messages-->
+          <div class="msg-box" id ="first-contact-msg" data-id="0">
+
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                ore 19:00 alla fattoria da me, festa della pannocchiaaa !...<br>
+                ci facciamo 2 risate... ricordi?quando gli ho detto va bene - va beene ! brutti alieni del caxxo ! usando il linguaggiìo della mia generazione : andate a pigliarvelo nel kuuloooo! ahahaha
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+              <span data-testid="tail-in" data-icon="tail-in" class="_2-dPL"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13" width="8" height="13"><path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path><path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path></svg></span>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                ahahha
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 1 messages-->
+
+          <!-- contact 2 messages-->
+          <div class="msg-box active" id="second-contact-msg" data-id="1">
+
+            <div class="msg-user-flex left">
+                <div class="msg-user">
+                  ciao Coop, non ho ancora saputo se hai letto il copione che ti ho inviato... mi dicono in base ai calcoli degli scienziati che il mio messaggio dovrebbe esserti già arrivato
+                  <div class="contact-time">
+                    18:18
+                  </div>
+                </div>
+
+                <div class="msg-user-layover parent-dropdown-msg">
+                  <i class="fas fa-chevron-down i-msg-menu"></i>
+                  <div class="dropdown-msg">
+                    <ul>
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a href="#">Rispondi</a></li>
+                      <li><a href="#">Scarica</a></li>
+                      <li><a href="#">Inoltra messaggio</a></li>
+                      <li><a href="#">Messaggio importante</a></li>
+                      <li><a href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+                <div class="msg-user right-color ">
+                  hey Stanley ! me lo hai inviato la settimana scorsa ed è arrivato solo oggi, però ora sai che quando riceverai il mio feedback sarà passata un'altra settimana. <br>
+                  ll copione è incredibile !... e devo dire che mi hai stupito pensando a me per il tuo nuovo film e ne sono onorato. hai già delineato il finale con Nolan ?
+                  <div class="contact-time">
+                    19:13
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="msg-user-layover parent-dropdown-msg">
+                  <i class="fas fa-chevron-down i-msg-menu"></i>
+                  <div class="dropdown-msg">
+                    <ul>
+                      <li><a href="#">Info messaggio</a></li>
+                      <li><a href="#">Rispondi</a></li>
+                      <li><a href="#">Scarica</a></li>
+                      <li><a href="#">Inoltra messaggio</a></li>
+                      <li><a href="#">Messaggio importante</a></li>
+                      <li><a href="#">Elimina messaggio</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+
+            </div>
+
+            <div class="msg-user-flex left msg-before">
+              <div class="msg-user">
+                siamo indecisi sul finale. abbiamo due idee alquanto differenti, così gli ho proposto di deciderlo in una gara di chili ! che vinca il migliore &#129322;
+                <div class="contact-time">
+                  18:22
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex left msg-next">
+              <div class="msg-user img-sent-user">
+                <img src="img/peperoncini.jpg">
+                <div class="contact-time">
+                  18:23
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color">
+                &#128514; ahahahahah
+                <div class="contact-time">
+                  18:33
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex left">
+              <div class="msg-user left">
+                dovresti dirmi se accetti la parte, sai... se ti tiri indietro, dovrò fare il casting per il protagonista e... resti fra noi... per questo ruolo non vorrei che si aggiudicasse la parte Matt Damon visto che lo vuole il produttore. è bravo lo so, ma non è adatto... gliel'ho anche detto che è tagliato per i ruoli da genio ribelle, ma un po' meno per le missioni spaziali
+                <div class="contact-time">
+                  18:21
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color">
+                beh se così stanno le cose... non vedo l'ora Stanley ! però devi aspettare un anno prima che arrivi. la missione qui si è prolungata di qualche mese
+                <div class="contact-time">
+                  19:03
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="msg-user-flex left">
+              <div class="msg-user left">
+                va bene, ti scrivo presto. nelle prossime settimane sarò irreperibile, sai che ogni tanto devo sparire da sotto i riflettori... ma ti farò avere ulteriori dettagli sulla tua parte
+                <div class="contact-time">
+                  18:39
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color">
+                sì, grazie Stanley
+                <div class="contact-time">
+                  19:00
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex left">
+              <div class="msg-user left">
+                a proposito Coop, com'è il tempo su Titano ?
+                <div class="contact-time">
+                  18:59
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- /contact 2 messages-->
+
+          <!-- contact 3 messages-->
+          <div class="msg-box" id="third-cont
+          ùact-msg" data-id="2">
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                Sto girando una scena, ti chiamo dopo. ah Kubrick ed io abbiamo una "sorpresa" per te...
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                ora sono curioso, ok
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 3 messages-->
+
+          <!-- contact 4 messages-->
+          <div class="msg-box" id="fourth-contact-msg" data-id="3">
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                ...
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                Hal concorda con Tars gli upgrade da fare
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 4 messages-->
+
+          <!-- contact 5 messages-->
+          <div class="msg-box" id="fifth-contact-msg" data-id="4">
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                comunico con loro telepaticamente !&#128561;
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                vada in infermeria il prima possibile Dr. Okun
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 5 messages-->
+
+          <!-- contact 6 messages-->
+          <div class="msg-box" id="sixth-contact-msg" data-id="5">
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                tipo un whormhole ahaha...
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                se non me lo avessi spiegato col foglio di carta bidimensionale non l'avrei mai capito
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 6 messages-->
+
+          <!-- contact 7 messages-->
+          <div class="msg-box" id="seventh-contact-msg" data-id="6">
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                ricorda la terza legge di Newoton, bisogna sempre lasciarsi qualcosa alle spalle per andare avanti
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                non dovresti fare un nuovo upgrade Tars
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 7 messages-->
+
+          <!-- contact 8 messages-->
+          <div class="msg-box" id="height-contact-msg" data-id="7">
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                EUREKA papa'!
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                fuoriclasse ! ti amo
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 8messages-->
+
+          <!-- contact 9 messages-->
+          <div class="msg-box" id="nineth-contact-msg" data-id="8">
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                ho incontrato Doc al bar e mi faceva ragionamenti in quinta dimensiona... forse dopo 5 pinte
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                ahahaha
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 9 messages-->
+
+          <!-- contact 10 messages-->
+          <div class="msg-box" id="tenth-contact-msg" data-id="9">
+            <div class="msg-user-flex left">
+              <div class="msg-user">
+                Coop alla RedBull mi hanno chiesto quando ti scade il contratto con la Nasa, vorrebbero farti una proposta
+                <div class="contact-time">
+                  time
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="msg-user-flex right">
+              <div class="msg-user right-color ">
+                è scaduto un mese fa, ma si è rinnovato temporaneamente visto che la missione sta subendo dei ritardi non calcolati
+                <div class="contact-time">
+                  time
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                    <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="msg-user-layover parent-dropdown-msg">
+                <i class="fas fa-chevron-down i-msg-menu"></i>
+                <div class="dropdown-msg">
+                  <ul>
+                    <li><a href="#">Info messaggio</a></li>
+                    <li><a href="#">Rispondi</a></li>
+                    <li><a href="#">Scarica</a></li>
+                    <li><a href="#">Inoltra messaggio</a></li>
+                    <li><a href="#">Messaggio importante</a></li>
+                    <li><a href="#">Elimina messaggio</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- /contact 10 messages-->
+
+          <div class="main-input-box">
+            <button class="emoticon-btn" type="" name="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M9.153 11.603c.795 0 1.439-.879 1.439-1.962s-.644-1.962-1.439-1.962-1.439.879-1.439 1.962.644 1.962 1.439 1.962zm-3.204 1.362c-.026-.307-.131 5.218 6.063 5.551 6.066-.25 6.066-5.551 6.066-5.551-6.078 1.416-12.129 0-12.129 0zm11.363 1.108s-.669 1.959-5.051 1.959c-3.505 0-5.388-1.164-5.607-1.959 0 0 5.912 1.055 10.658 0zM11.804 1.011C5.609 1.011.978 6.033.978 12.228s4.826 10.761 11.021 10.761S23.02 18.423 23.02 12.228c.001-6.195-5.021-11.217-11.216-11.217zM12 21.354c-5.273 0-9.381-3.886-9.381-9.159s3.942-9.548 9.215-9.548 9.548 4.275 9.548 9.548c-.001 5.272-4.109 9.159-9.382 9.159zm3.108-9.751c.795 0 1.439-.879 1.439-1.962s-.644-1.962-1.439-1.962-1.439.879-1.439 1.962.644 1.962 1.439 1.962z">
+                </path>
+              </svg>
+            </button>
+            <input id="main-search-bar-input" class="main-search-bar-input" type="text" name="" value="" placeholder="Scrivi un messaggio">
+            <button class="voice-input-btn" type="" name="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z">
+                </path>
+              </svg>
+            </button>
+          </div>
+
+        </main>
+        <!-- /main -->
+
+        <!-- rigth side hidden by default-->
+        <!-- <div id="side-right" class="hidden">
+          <header>
+            HEADER
+          </header>
+          Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp Boolzapp
+        </div> -->
+
+        <!-- left side -->
+
+      </div>
+    </div>
+    <!-- /div wrapper -->
+
+
+    <!-- creazione di template col metodo .clone() nel JS -->
+    <!-- TEMPLATE msg left-->
+    <div class="template-received" style="display: none;">
+      <div class="msg-user-flex left">
+        <div class="msg-user">
+          // DEBUG : cloning in a template style
+          <!-- <p>ogni inizio ha una fine </p>
+          <p>una rondine non fa miaoo </p>
+          <p>la gente è il più grande spettacolo del mondo e non si paga il biglietto per guardarlo </p>
+          <p>non prendere la vita sul serio, tanto non se ne esce vivi </p>
+          <p>la legge di murphy sice che se qualcosa può accadere accadrà</p>
+          <p>la fortuna è bendata ma la sfortuna ci vede benissimo</p> -->
+          <div id= "contact-time" class="contact-time">
+            time-test
+          </div>
+        </div>
+
+        <div class="msg-user-layover parent-dropdown-msg">
+          <i class="fas fa-chevron-down i-msg-menu"></i>
+          <div class="dropdown-msg">
+            <ul>
+              <li><a href="#">Info messaggio</a></li>
+              <li><a href="#">Rispondi</a></li>
+              <li><a href="#">Scarica</a></li>
+              <li><a href="#">Inoltra messaggio</a></li>
+              <li><a href="#">Messaggio importante</a></li>
+              <li><a href="#">Elimina messaggio</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /TEMPLATE msg left -->
+    <!-- TEMPLATE msg right-->
+    <div class="template-sent" style="display: none;">
+
+      <div class="msg-user-flex right">
+        <div class="msg-user right-color ">
+          <p>something here</p>
+          <!-- something here -->
+          <div id="contact-time" class="contact-time">
+            <p>time-test</p>
+            <!-- time-test -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+              <path fill="currentColor" d="M17.394 5.035l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0l-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+              </path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="msg-user-layover parent-dropdown-msg">
+          <i class="fas fa-chevron-down i-msg-menu"></i>
+          <div class="dropdown-msg">
+            <ul>
+              <li><a href="#">Info messaggio</a></li>
+              <li><a href="#">Rispondi</a></li>
+              <li><a href="#">Scarica</a></li>
+              <li><a href="#">Inoltra messaggio</a></li>
+              <li><a href="#">Messaggio importante</a></li>
+              <li><a href="#">Elimina messaggio</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /TEMPLATE msg right-->
+
+    <!-- TEMPLATE MODEL TO USE-->
+    <div class="template" style="display: none;">
+    </div>
+    <!-- /TEMPLATE MODEL TO USE-->
+
+    <!-- /creazione di template col metodo .clone() nel JS -->
+
+  </body>
+</html>
+
+<!-- BONUS ELEMENTS CONTENTS-->
+<!-- <audio controls style="display:none;">
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> -->
+<!-- /BONUS ELEMENTS -->

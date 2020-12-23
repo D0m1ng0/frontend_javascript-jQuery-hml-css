@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: azure;
+}
+#flex-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
+}
+h1 {
+  font-family: sans-serif;
+  color: black;
+  text-align: center;
+}
+
+#ticketTable {
+  background-color: blue;
+}
+.hidden {
+  transition: 0.2s;
+  opacity: 0;
+}
+
+.show {
+  transition: 0.2s;
+  opacity: 1;
+}

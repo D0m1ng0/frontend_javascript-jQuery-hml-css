@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Biglietteria</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!-- contenitore calcolo prezzo biglietto -->
+    <h1 id="title">Self-service Ferrovie</h1>
+
+      <!-- form che prende i dati -->
+      <div class="">
+        <label for="nameUser">Nome</label>
+        <input id="nameUser" type="text" name="name" value="" placeholder="Nome">
+      </div>
+
+      <div class="">
+        <label for="Km">Distanza da percorrere</label>
+        <input id="Km" type="number" name="name" value="" placeholder="Distanza in km">
+      </div>
+
+      <div class="">
+        <label for="ageCategory">Scegli la tua categoria di età</label>
+        <select id="ageCategory" name="ageCategory">
+          <option value="Minorenne">Minorenne</option>
+          <option value="Adulto">Adulto</option>
+          <option value="Over65">Over 65</option>
+        </select>
+      </div>
+      <!-- /form che prende i dati -->
+
+      <!-- bottone che crea il biglietto -->
+      <button id="ticketCreate" type="button" name="button">
+        Crea il biglietto
+      </button>
+      <button id="ticketReset" type="button" name="button">Annulla</button>
+      <script type="text/javascript" src="js/script.js">
+      </script>
+      <!-- /bottone che crea il biglietto -->
+
+      <div id="ticketTable" class="show" class="hidden">
+      <!-- tabella che del biglietto -->
+      <table>
+        <thead>
+          <tr>
+            <th>Passeggero</th>
+            <th>#Treno</th>
+            <th>Carrozza</th>
+            <th>Prezzobiglietto</th>
+            <th>Categoria</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th id="passenger"></th>
+            <th id="numberTrain"></th>
+            <th id="coatch"></th>
+            <th id="priceTicket"></th>
+            <th id="passengerCategory"></th>
+          </tr>
+
+        </tbody>
+      </table>
+      <!-- /tabella che del biglietto -->
+      </div>
+
+
+  </body>
+</html>
